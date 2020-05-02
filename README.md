@@ -1,5 +1,12 @@
 # web
 
+## Dev machine setup
+
+Instalação do node
+
+npm install -g @vue/cli-service-global
+npm install -g firebase-tools
+
 ## Project setup
 ```
 npm install
