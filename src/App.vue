@@ -7,7 +7,7 @@
         <router-link to="/teste">Restaurantes</router-link>
       </div>
       <div id="auth">
-        <router-link to="/login">
+        <router-link to="/auth">
           <p>
             Entrar
           </p>

@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import BookRegister from '../views/RegisterBook.vue'
-import NoteRegister from '../views/RegisterNote.vue'
+import Auth from '../views/Auth.vue'
+import Login from '../components/Login.vue'
 import firebase from 'firebase'
 
 Vue.use(VueRouter)
@@ -12,7 +10,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "*",
-    redirect: "/login",
+    redirect: "/auth",
   },
   {
     path: '/',
@@ -23,17 +21,21 @@ const routes = [
     }
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    path: '/auth',
+    name: 'Auth',
+    component: Auth,
+    meta: {
+      requeresAuth: false
+    }
   },
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register,
-    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
-  },
+  // {
+  //   path: '/auth/login',
+  //   name: 'Login',
+  //   component: Login,
+  //   meta: {
+  //     requeresAuth: false
+  //   }
+  // },
 ]
 
 const router = new VueRouter({
